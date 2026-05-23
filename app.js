@@ -78,6 +78,28 @@ function loadScheduleFromStorage() {
   }
 }
 
+function isStoredScheduleCompatible(storedSchedule, config) {
+  if (!Array.isArray(storedSchedule)) return false;
+  const configSlots = new Set();
+  for (const day of config.days) {
+    if (!day || typeof day.name !== 'string' || !Array.isArray(day.timeslots)) return false;
+    for (const slot of day.timeslots) {
+      if (!slot || typeof slot.name !== 'string') return false;
+      configSlots.add(`${day.name}||${slot.name}`);
+    }
+  }
+
+  for (const slot of storedSchedule) {
+    if (!slot || typeof slot.day !== 'string' || typeof slot.timeslot !== 'string' || !Array.isArray(slot.people)) return false;
+    if (!configSlots.has(`${slot.day}||${slot.timeslot}`)) return false;
+    for (const assignment of slot.people) {
+      if (!assignment || typeof assignment.id !== 'string' || typeof assignment.locked !== 'boolean') return false;
+    }
+  }
+
+  return storedSchedule.length === configSlots.size;
+}
+
 function setAlert(msg, isError = true) {
   initElements();
   if (!elements.alert) return;
@@ -468,11 +490,14 @@ async function loadDefaults() {
   }
   state.people = people;
   
-  // Load schedule from localStorage if available
+  // Load schedule from localStorage if available and compatible with the current config
   const stored = loadScheduleFromStorage();
-  if (stored && Array.isArray(stored)) {
+  if (stored && isStoredScheduleCompatible(stored, state.config)) {
     state.schedule = stored;
   } else {
+    if (stored) {
+      setAlert('Saved schedule data did not match the current timeslot configuration and has been reset.', true);
+    }
     state.schedule = createEmptySchedule(state.config);
   }
   renderSchedule();

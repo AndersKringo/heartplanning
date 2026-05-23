@@ -1,30 +1,30 @@
 {
   "days": [
     {
-      "name": "Thursday",
+      "name": "Torsdag",
       "timeslots": [
-        { "name": "10:00 – 16:00", "required": 3, "start": "10:00", "end": "16:00" },
-        { "name": "14:00 – 20:00", "required": 4, "start": "14:00", "end": "20:00" },
-        { "name": "16:00 – 22:00", "required": 3, "start": "16:00", "end": "22:00" },
-        { "name": "22:00 – 04:00", "required": 7, "start": "22:00", "end": "04:00" }
+        { "name": "Torsdag Formiddag", "required": 3, "start": "10:00", "end": "16:00" },
+        { "name": "Torsdag Eftermiddag", "required": 4, "start": "14:00", "end": "20:00" },
+        { "name": "Torsdag Aften", "required": 3, "start": "16:00", "end": "22:00" },
+        { "name": "Torsdag Nat", "required": 7, "start": "22:00", "end": "04:00" }
       ]
     },
     {
-      "name": "Friday",
+      "name": "Fredag",
       "timeslots": [
-        { "name": "09:00 – 15:00", "required": 3, "start": "09:00", "end": "15:00" },
-        { "name": "14:00 – 20:00", "required": 4, "start": "14:00", "end": "20:00" },
-        { "name": "16:00 – 22:00", "required": 3, "start": "16:00", "end": "22:00" },
-        { "name": "22:00 – 04:00", "required": 7, "start": "22:00", "end": "04:00" }
+        { "name": "Fredag Formiddag", "required": 3, "start": "09:00", "end": "15:00" },
+        { "name": "Fredag Eftermiddag", "required": 4, "start": "14:00", "end": "20:00" },
+        { "name": "Fredag Aften", "required": 3, "start": "16:00", "end": "22:00" },
+        { "name": "Fredag Nat", "required": 7, "start": "22:00", "end": "04:00" }
       ]
     },
     {
-      "name": "Saturday",
+      "name": "Lørdag",
       "timeslots": [
-        { "name": "09:00 – 15:00", "required": 3, "start": "09:00", "end": "15:00" },
-        { "name": "14:00 – 20:00", "required": 5, "start": "14:00", "end": "20:00" },
-        { "name": "16:00 – 22:00", "required": 4, "start": "16:00", "end": "22:00" },
-        { "name": "22:00 – 04:00", "required": 8, "start": "22:00", "end": "04:00" }
+        { "name": "Lørdag Formiddag", "required": 3, "start": "09:00", "end": "15:00" },
+        { "name": "Lørdag Eftermiddag", "required": 5, "start": "14:00", "end": "20:00" },
+        { "name": "Lørdag Aften", "required": 4, "start": "16:00", "end": "22:00" },
+        { "name": "Lørdag Nat", "required": 8, "start": "22:00", "end": "04:00" }
       ]
     }
   ]
