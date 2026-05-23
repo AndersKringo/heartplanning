@@ -175,6 +175,63 @@ select {
   appearance: none;
   background: #ffffff;
 }
+
+.compact-summary-panel {
+  margin: 0 0 18px;
+  padding: 0;
+}
+
+.compact-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.compact-summary .summary-item {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.compact-summary .summary-item strong {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.view-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.tab-button {
+  padding: 10px 16px;
+  margin: 0;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: #6b7280;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-button:hover {
+  color: #1f2937;
+  background: transparent;
+}
+
+.tab-button.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+}
+
 .summary-panel {
   display: grid;
   gap: 12px;

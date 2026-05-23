@@ -8,6 +8,7 @@ const elements = {
   btnClearSchedule: null,
   btnAutoAllocate: null,
   btnPeopleView: null,
+  btnScheduleView: null,
   btnSaveSchedule: null,
   alert: null,
 };
@@ -27,6 +28,7 @@ function initElements() {
   elements.btnClearSchedule = document.getElementById('btn-clear-schedule');
   elements.btnAutoAllocate = document.getElementById('btn-auto-allocate');
   elements.btnPeopleView = document.getElementById('btn-people-view');
+  elements.btnScheduleView = document.getElementById('btn-schedule-view');
   elements.btnSaveSchedule = document.getElementById('btn-save-schedule');
   elements.alert = document.getElementById('alert');
 }
@@ -539,9 +541,18 @@ function getBundledConfig() {
 
 function toggleView(viewName) {
   state.view = viewName;
-  if (elements.btnPeopleView) {
-    elements.btnPeopleView.textContent = viewName === 'people' ? 'Schedule view' : 'People view';
+  
+  // Update active tab
+  if (elements.btnScheduleView && elements.btnPeopleView) {
+    if (viewName === 'people') {
+      elements.btnScheduleView.classList.remove('active');
+      elements.btnPeopleView.classList.add('active');
+    } else {
+      elements.btnScheduleView.classList.add('active');
+      elements.btnPeopleView.classList.remove('active');
+    }
   }
+  
   if (viewName === 'people') renderPeopleView();
   else renderSchedule();
 }
@@ -602,12 +613,13 @@ function wireEvents() {
   initElements();
   elements.btnClearSchedule.addEventListener('click', clearSchedule);
   elements.btnAutoAllocate.addEventListener('click', autoAllocate);
-  if (elements.btnPeopleView) elements.btnPeopleView.addEventListener('click', () => toggleView(state.view === 'people' ? 'schedule' : 'people'));
+  if (elements.btnScheduleView) elements.btnScheduleView.addEventListener('click', () => toggleView('schedule'));
+  if (elements.btnPeopleView) elements.btnPeopleView.addEventListener('click', () => toggleView('people'));
   elements.btnSaveSchedule.addEventListener('click', saveSchedule);
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
   wireEvents();
   await loadDefaults();
-  if (elements.btnPeopleView) elements.btnPeopleView.textContent = state.view === 'people' ? 'Schedule view' : 'People view';
+  toggleView(state.view);
 });

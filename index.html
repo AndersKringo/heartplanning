@@ -17,21 +17,24 @@
         <h2>Actions</h2>
         <button id="btn-clear-schedule">Clear schedule</button>
         <button id="btn-auto-allocate">Auto allocate</button>
-        <button id="btn-people-view">People view</button>
         <button id="btn-save-schedule">Save schedule JSON</button>
         <div id="alert" class="alert"></div>
       </div>
     </section>
 
+    <div class="compact-summary-panel">
+      <div id="summary" class="compact-summary"></div>
+    </div>
+
+    <div class="view-tabs">
+      <button id="btn-schedule-view" class="tab-button active">Schedule</button>
+      <button id="btn-people-view" class="tab-button">People</button>
+    </div>
+
     <section class="layout">
       <section class="schedule-panel">
         <div class="panel">
-          <h2>Schedule</h2>
           <div id="schedule-grid"></div>
-        </div>
-        <div class="panel summary-panel">
-          <h2>Summary</h2>
-          <div id="summary"></div>
         </div>
       </section>
     </section>
