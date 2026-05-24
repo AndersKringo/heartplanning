@@ -1,6 +1,7 @@
 ﻿// Core state and DOM element references
 const DEFAULT_CONFIG_URL = 'config.json';
 const DEFAULT_PEOPLE_URL = 'people.json';
+const API_SCHEDULE_URL = '/api/schedule';
 
 const elements = {
   scheduleGrid: null,
@@ -68,6 +69,28 @@ function saveScheduleToStorage() {
   } catch (e) {
     // ignore storage errors
   }
+
+  // Fire-and-forget remote save; do not block UI
+  try {
+    saveScheduleRemote(state.schedule).catch(() => {});
+  } catch (e) {
+    // ignore
+  }
+}
+
+
+async function saveScheduleRemote(schedule) {
+  try {
+    await fetch(API_SCHEDULE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(schedule),
+    });
+    return true;
+  } catch (e) {
+    console.warn('Failed to save schedule remotely', e);
+    return false;
+  }
 }
 
 function loadScheduleFromStorage() {
@@ -75,6 +98,17 @@ function loadScheduleFromStorage() {
     const raw = localStorage.getItem('heartland-schedule');
     if (!raw) return null;
     return JSON.parse(raw);
+  } catch (e) {
+    return null;
+  }
+}
+
+async function loadScheduleRemote() {
+  try {
+    const res = await fetch(API_SCHEDULE_URL);
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data;
   } catch (e) {
     return null;
   }
@@ -492,15 +526,20 @@ async function loadDefaults() {
   }
   state.people = people;
   
-  // Load schedule from localStorage if available and compatible with the current config
-  const stored = loadScheduleFromStorage();
-  if (stored && isStoredScheduleCompatible(stored, state.config)) {
-    state.schedule = stored;
+  // Try loading schedule from remote backend first, then fall back to localStorage
+  const remote = await loadScheduleRemote();
+  if (remote && isStoredScheduleCompatible(remote, state.config)) {
+    state.schedule = remote;
   } else {
-    if (stored) {
-      setAlert('Saved schedule data did not match the current timeslot configuration and has been reset.', true);
+    const stored = loadScheduleFromStorage();
+    if (stored && isStoredScheduleCompatible(stored, state.config)) {
+      state.schedule = stored;
+    } else {
+      if (remote || stored) {
+        setAlert('Saved schedule data did not match the current timeslot configuration and has been reset.', true);
+      }
+      state.schedule = createEmptySchedule(state.config);
     }
-    state.schedule = createEmptySchedule(state.config);
   }
   renderSchedule();
 }
