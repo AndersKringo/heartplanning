@@ -7,7 +7,8 @@ const PORT = process.env.PORT || 3000;
 
 const PUBLIC_DIR = path.join(__dirname);
 const CONFIG_PATH = path.join(__dirname, 'config.json');
-const SCHEDULE_PATH = path.join(__dirname, 'schedule.json');
+const DATA_DIR = process.env.DATA_DIR || __dirname;
+const SCHEDULE_PATH = path.join(DATA_DIR, 'schedule.json');
 
 app.use(express.json());
 app.use(express.static(PUBLIC_DIR));

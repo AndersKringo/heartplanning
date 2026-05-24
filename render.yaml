@@ -4,9 +4,15 @@ services:
     repo: github.com/AndersKringo/heartplanning
     branch: main
     env: node
-    plan: free
+    plan: starter
     region: oregon
     buildCommand: npm install
     startCommand: npm start
     autoDeploy: true
-    envVars: []
+    envVars:
+      - key: DATA_DIR
+        value: /data
+    disk:
+      name: schedule-data
+      mountPath: /data
+      sizeGB: 1
