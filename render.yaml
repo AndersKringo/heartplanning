@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: heartplanning
+    repo: github.com/AndersKringo/heartplanning
+    branch: main
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars: []
