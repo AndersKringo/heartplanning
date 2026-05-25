@@ -1,0 +1,2372 @@
+{
+  "festival": "Heartland Festival 2026",
+  "location": "Egeskov Slot, Midtfyn",
+  "dates": "18-20. juni 2026",
+  "programme": [
+    {
+      "name": "Duran Duran",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 22:15",
+          "stage": "Greenfield",
+          "start": "22:15",
+          "end": "23:45"
+        }
+      ]
+    },
+    {
+      "name": "Nick Cave & The Bad Seeds",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 22:00",
+          "stage": "Greenfield",
+          "start": "22:00",
+          "end": "23:30"
+        }
+      ]
+    },
+    {
+      "name": "The Minds Of 99",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 22:15",
+          "stage": "Greenfield",
+          "start": "22:15",
+          "end": "23:45"
+        }
+      ]
+    },
+    {
+      "name": "4 Non Blondes",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 16:45",
+          "stage": "Greenfield",
+          "start": "16:45",
+          "end": "18:15"
+        }
+      ]
+    },
+    {
+      "name": "Jason Isbell & The 400 Unit",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 18:05",
+          "stage": "Highland",
+          "start": "18:05",
+          "end": "19:35"
+        }
+      ]
+    },
+    {
+      "name": "Lp",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 16:45",
+          "stage": "Greenfield",
+          "start": "16:45",
+          "end": "18:15"
+        }
+      ]
+    },
+    {
+      "name": "Manic Street Preachers",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 21:00",
+          "stage": "Highland",
+          "start": "21:00",
+          "end": "22:30"
+        }
+      ]
+    },
+    {
+      "name": "Sébastien Tellier",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 18:15",
+          "stage": "Highland",
+          "start": "18:15",
+          "end": "19:45"
+        }
+      ]
+    },
+    {
+      "name": "Don West",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 20:50",
+          "stage": "Highland",
+          "start": "20:50",
+          "end": "22:20"
+        }
+      ]
+    },
+    {
+      "name": "Gnags",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 19:20",
+          "stage": "Greenfield",
+          "start": "19:20",
+          "end": "20:50"
+        }
+      ]
+    },
+    {
+      "name": "Guldimund",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 14:30",
+          "stage": "Greenfield",
+          "start": "14:30",
+          "end": "16:00"
+        }
+      ]
+    },
+    {
+      "name": "Hans Philip",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 19:30",
+          "stage": "Greenfield",
+          "start": "19:30",
+          "end": "21:00"
+        }
+      ]
+    },
+    {
+      "name": "Hugorm",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 19:30",
+          "stage": "Greenfield",
+          "start": "19:30",
+          "end": "21:00"
+        }
+      ]
+    },
+    {
+      "name": "Icekiid",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 23:55",
+          "stage": "Highland",
+          "start": "23:55",
+          "end": "01:25"
+        }
+      ]
+    },
+    {
+      "name": "Katinka",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 15:30",
+          "stage": "Highland",
+          "start": "15:30",
+          "end": "17:00"
+        }
+      ]
+    },
+    {
+      "name": "Malk De Koijn",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 21:10",
+          "stage": "Highland",
+          "start": "21:10",
+          "end": "22:40"
+        }
+      ]
+    },
+    {
+      "name": "Max Mcnown",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 18:15",
+          "stage": "Highland",
+          "start": "18:15",
+          "end": "19:45"
+        }
+      ]
+    },
+    {
+      "name": "Mille",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 15:40",
+          "stage": "Highland",
+          "start": "15:40",
+          "end": "17:10"
+        }
+      ]
+    },
+    {
+      "name": "Pil",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 14:30",
+          "stage": "Greenfield",
+          "start": "14:30",
+          "end": "16:00"
+        }
+      ]
+    },
+    {
+      "name": "Roya",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 00:10",
+          "stage": "Highland",
+          "start": "00:10",
+          "end": "01:40"
+        }
+      ]
+    },
+    {
+      "name": "Snail Mail",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 15:40",
+          "stage": "Highland",
+          "start": "15:40",
+          "end": "17:10"
+        }
+      ]
+    },
+    {
+      "name": "Soleima",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 13:20",
+          "stage": "Highland",
+          "start": "13:20",
+          "end": "14:50"
+        }
+      ]
+    },
+    {
+      "name": "Spleen United",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 23:55",
+          "stage": "Highland",
+          "start": "23:55",
+          "end": "01:25"
+        }
+      ]
+    },
+    {
+      "name": "Von Quar",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 13:20",
+          "stage": "Highland",
+          "start": "13:20",
+          "end": "14:50"
+        }
+      ]
+    },
+    {
+      "name": "Sange Fra Hjertet",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 16:35",
+          "stage": "Greenfield",
+          "start": "16:35",
+          "end": "18:05"
+        }
+      ]
+    },
+    {
+      "name": "Atusji",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 16:00",
+          "stage": "Diorama",
+          "start": "16:00",
+          "end": "17:30"
+        }
+      ]
+    },
+    {
+      "name": "Augusta Schackinger",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 18:00",
+          "stage": "Diorama",
+          "start": "18:00",
+          "end": "19:30"
+        }
+      ]
+    },
+    {
+      "name": "Eros For You",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 21:20",
+          "stage": "Diorama",
+          "start": "21:20",
+          "end": "22:50"
+        }
+      ]
+    },
+    {
+      "name": "Jonathan",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 18:00",
+          "stage": "Diorama",
+          "start": "18:00",
+          "end": "19:30"
+        }
+      ]
+    },
+    {
+      "name": "Mathias Ranch",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 15:35",
+          "stage": "Diorama",
+          "start": "15:35",
+          "end": "17:05"
+        }
+      ]
+    },
+    {
+      "name": "Rosa",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 21:15",
+          "stage": "Diorama",
+          "start": "21:15",
+          "end": "22:45"
+        }
+      ]
+    },
+    {
+      "name": "Salon Bleu (Jazz Club)",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 15:45",
+          "stage": "Diorama",
+          "start": "15:45",
+          "end": "17:15"
+        }
+      ]
+    },
+    {
+      "name": "Sira Jovina",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 14:10",
+          "stage": "Diorama",
+          "start": "14:10",
+          "end": "15:40"
+        }
+      ]
+    },
+    {
+      "name": "Snuggle",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 12:30",
+          "stage": "Diorama",
+          "start": "12:30",
+          "end": "14:00"
+        }
+      ]
+    },
+    {
+      "name": "Total Hip Replacement",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 12:30",
+          "stage": "Diorama",
+          "start": "12:30",
+          "end": "14:00"
+        }
+      ]
+    },
+    {
+      "name": "Will",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 18:00",
+          "stage": "Diorama",
+          "start": "18:00",
+          "end": "19:30"
+        }
+      ]
+    },
+    {
+      "name": "Kasper Bjørke & Prom Night",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 00:00",
+          "stage": "Diorama",
+          "start": "00:00",
+          "end": "01:30"
+        }
+      ]
+    },
+    {
+      "name": "Godaften – En Fest Med Anton Westerlin",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 00:00",
+          "stage": "Diorama",
+          "start": "00:00",
+          "end": "01:30"
+        }
+      ]
+    },
+    {
+      "name": "Fedty & Friends",
+      "category": "Musik",
+      "performances": [
+        {
+          "day": null,
+          "date": "Søndag d. 21. juni 2026, 00:00",
+          "stage": "Diorama",
+          "start": "00:00",
+          "end": "01:30"
+        }
+      ]
+    },
+    {
+      "name": "Miranda July",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 18:05",
+          "stage": "Podium",
+          "start": "18:05",
+          "end": "19:35"
+        }
+      ]
+    },
+    {
+      "name": "Sara Stridsberg & Emma Holten",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 12:30",
+          "stage": "Podium",
+          "start": "12:30",
+          "end": "14:00"
+        }
+      ]
+    },
+    {
+      "name": "Åsne Seierstad & Isabel Bramsen",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 15:30",
+          "stage": "Podium",
+          "start": "15:30",
+          "end": "17:00"
+        }
+      ]
+    },
+    {
+      "name": "Naja Marie Aidt & Søren Huss",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 17:55",
+          "stage": "Podium",
+          "start": "17:55",
+          "end": "19:25"
+        }
+      ]
+    },
+    {
+      "name": "Paprika Steen & Lars Brygmann",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 13:40",
+          "stage": "Podium",
+          "start": "13:40",
+          "end": "15:10"
+        }
+      ]
+    },
+    {
+      "name": "Ghita Nørby & Bertel Haarder",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 12:30",
+          "stage": "Podium",
+          "start": "12:30",
+          "end": "14:00"
+        }
+      ]
+    },
+    {
+      "name": "Lærke Kløvedal & Matilde Kimer",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 15:30",
+          "stage": "Podium",
+          "start": "15:30",
+          "end": "17:00"
+        }
+      ]
+    },
+    {
+      "name": "Karen-Lise Mynster, Bodil Skovgaard Nielsen & Liv Helm",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 21:00",
+          "stage": "Podium",
+          "start": "21:00",
+          "end": "22:30"
+        }
+      ]
+    },
+    {
+      "name": "Henrik Vibskov & Mikkel Hess",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 21:00",
+          "stage": "Podium",
+          "start": "21:00",
+          "end": "22:30"
+        }
+      ]
+    },
+    {
+      "name": "Katherine Diez, Morten Mortensen & Eva Lilja",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 11:25",
+          "stage": "Podium",
+          "start": "11:25",
+          "end": "12:55"
+        }
+      ]
+    },
+    {
+      "name": "Eva Marie Rødbro & Simona Vencka Tayanna",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 11:20",
+          "stage": "Podium",
+          "start": "11:20",
+          "end": "12:50"
+        }
+      ]
+    },
+    {
+      "name": "Anders Lund Madsen & Casper Kirketerp-Møller",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 13:40",
+          "stage": "Podium",
+          "start": "13:40",
+          "end": "15:10"
+        }
+      ]
+    },
+    {
+      "name": "Anna Juul & Christian Groes",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 13:00",
+          "stage": "Podium",
+          "start": "13:00",
+          "end": "14:30"
+        }
+      ]
+    },
+    {
+      "name": "Helle Faber & Morten Kirckhoff",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 15:20",
+          "stage": "Podium",
+          "start": "15:20",
+          "end": "16:50"
+        }
+      ]
+    },
+    {
+      "name": "Tommy Ahlers & Sebastian Mernild",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 18:05",
+          "stage": "Podium",
+          "start": "18:05",
+          "end": "19:35"
+        }
+      ]
+    },
+    {
+      "name": "Henrik Moltke & Marcel Mirzaei-Fard",
+      "category": "Talks",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 14:10",
+          "stage": "Podium",
+          "start": "14:10",
+          "end": "15:40"
+        }
+      ]
+    },
+    {
+      "name": "Paola Pivi",
+      "category": "Kunst",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 14:30",
+          "stage": "Kunst",
+          "start": "14:30",
+          "end": "16:00"
+        },
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026",
+          "stage": "Kunst",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026",
+          "stage": "Kunst",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    {
+      "name": "Fos",
+      "category": "Kunst",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026",
+          "stage": "Kunst",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026",
+          "stage": "Kunst",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026",
+          "stage": "Kunst",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    {
+      "name": "Miriam Kongstad",
+      "category": "Kunst",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 21:00",
+          "stage": "Podium",
+          "start": "21:00",
+          "end": "22:30"
+        }
+      ]
+    },
+    {
+      "name": "Pinaffo & Pluvinage",
+      "category": "Kunst",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026",
+          "stage": "Kunst",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026",
+          "stage": "Kunst",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026",
+          "stage": "Kunst",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    {
+      "name": "Line Sandvad Mengers",
+      "category": "Kunst",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 12:05",
+          "stage": "Kunst",
+          "start": "12:05",
+          "end": "13:35"
+        },
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 10:05",
+          "stage": "Kunst",
+          "start": "10:05",
+          "end": "11:35"
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 10:05",
+          "stage": "Kunst",
+          "start": "10:05",
+          "end": "11:35"
+        }
+      ]
+    },
+    {
+      "name": "Dicki Lakha",
+      "category": "Kunst",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 15:35",
+          "stage": "Kunst",
+          "start": "15:35",
+          "end": "17:05"
+        },
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026",
+          "stage": "Kunst",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026",
+          "stage": "Kunst",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    {
+      "name": "Tableau",
+      "category": "Kunst",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026",
+          "stage": "Kunst",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026",
+          "stage": "Kunst",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026",
+          "stage": "Kunst",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    {
+      "name": "Anna Walther",
+      "category": "Kunst",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 10:30",
+          "stage": "Kunst",
+          "start": "10:30",
+          "end": "12:00"
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 10:30",
+          "stage": "Kunst",
+          "start": "10:30",
+          "end": "12:00"
+        }
+      ]
+    },
+    {
+      "name": "Swm",
+      "category": "Kunst",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 21:15",
+          "stage": "Diorama",
+          "start": "21:15",
+          "end": "22:45"
+        }
+      ]
+    },
+    {
+      "name": "Chef'S Table Med  Mikkel Maarbjerg",
+      "category": "Mad",
+      "performances": []
+    },
+    {
+      "name": "Kunstomvisning",
+      "category": "Kunst",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 13:00",
+          "stage": "Kunst",
+          "start": "13:00",
+          "end": "14:30"
+        },
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 11:00",
+          "stage": "Kunst",
+          "start": "11:00",
+          "end": "12:30"
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 11:00",
+          "stage": "Kunst",
+          "start": "11:00",
+          "end": "12:30"
+        }
+      ]
+    },
+    {
+      "name": "Chef'S Table Med Agnes Karrasch & Nino Fjordside",
+      "category": "Mad",
+      "performances": []
+    },
+    {
+      "name": "Chef'S Table Med Jesper Krabbe",
+      "category": "Mad",
+      "performances": []
+    },
+    {
+      "name": "Den Store Dessertmiddag Med Magasinet Lækkerier",
+      "category": "Mad",
+      "performances": []
+    },
+    {
+      "name": "Heartland Banquet Med Falsled Kro",
+      "category": "Mad",
+      "performances": []
+    },
+    {
+      "name": "Langbordsmiddag Med Faaborg-Midtfyn Kommune",
+      "category": "Mad",
+      "performances": []
+    },
+    {
+      "name": "Marie Holm & Lærke Kløvedal",
+      "category": "Mad",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 12:15",
+          "stage": "Tasteland",
+          "start": "12:15",
+          "end": "13:45"
+        }
+      ]
+    },
+    {
+      "name": "Søren Ejlersen",
+      "category": "Mad",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 13:30",
+          "stage": "Tasteland",
+          "start": "13:30",
+          "end": "15:00"
+        }
+      ]
+    },
+    {
+      "name": "Ishinoko",
+      "category": "Mad",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 15:15",
+          "stage": "Tasteland",
+          "start": "15:15",
+          "end": "16:45"
+        }
+      ]
+    },
+    {
+      "name": "Agnes Karrasch & Nino Fjordside",
+      "category": "Mad",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 15:00",
+          "stage": "Tasteland",
+          "start": "15:00",
+          "end": "16:30"
+        }
+      ]
+    },
+    {
+      "name": "Mika Wulff & Signe Wulff",
+      "category": "Mad",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 16:30",
+          "stage": "Tasteland",
+          "start": "16:30",
+          "end": "18:00"
+        }
+      ]
+    },
+    {
+      "name": "Peter Mejnertsen",
+      "category": "Mad",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 10:45",
+          "stage": "Tasteland",
+          "start": "10:45",
+          "end": "12:15"
+        }
+      ]
+    },
+    {
+      "name": "Jacob Stokkebye & Erik Lund",
+      "category": "Mad",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 16:45",
+          "stage": "Tasteland",
+          "start": "16:45",
+          "end": "18:15"
+        }
+      ]
+    },
+    {
+      "name": "Bjarke Bertelsen & Henrik Hemmingsen",
+      "category": "Mad",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 18:00",
+          "stage": "Tasteland",
+          "start": "18:00",
+          "end": "19:30"
+        }
+      ]
+    },
+    {
+      "name": "Økobo",
+      "category": "Mad",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 10:30",
+          "stage": "Tasteland",
+          "start": "10:30",
+          "end": "12:00"
+        }
+      ]
+    },
+    {
+      "name": "Alex Pichardt & Jens Helt Jessen",
+      "category": "Mad",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 12:00",
+          "stage": "Tasteland",
+          "start": "12:00",
+          "end": "13:30"
+        }
+      ]
+    },
+    {
+      "name": "Clara Filippa & Rasmus Bredahl",
+      "category": "Mad",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 13:45",
+          "stage": "Tasteland",
+          "start": "13:45",
+          "end": "15:15"
+        }
+      ]
+    },
+    {
+      "name": "Micro Greens",
+      "category": "Mad",
+      "performances": [
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 15:00",
+          "stage": "Tasteland",
+          "start": "15:00",
+          "end": "16:30"
+        }
+      ]
+    },
+    {
+      "name": "Aperol Sprirtz Masterclass",
+      "category": "Events",
+      "performances": [
+        {
+          "day": null,
+          "date": "",
+          "stage": "Events",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 12:30",
+          "stage": "Events",
+          "start": "12:30",
+          "end": "14:00"
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 12:30",
+          "stage": "Events",
+          "start": "12:30",
+          "end": "14:00"
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 14:00",
+          "stage": "Events",
+          "start": "14:00",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
+      "name": "Breathwork Session Med Sef",
+      "category": "Events",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026",
+          "stage": "Events",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026",
+          "stage": "Events",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    {
+      "name": "Drømmescenen",
+      "category": "Events",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 12:30",
+          "stage": "Events",
+          "start": "12:30",
+          "end": "14:00"
+        },
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 11:20",
+          "stage": "Events",
+          "start": "11:20",
+          "end": "12:50"
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 11:30",
+          "stage": "Events",
+          "start": "11:30",
+          "end": "13:00"
+        }
+      ]
+    },
+    {
+      "name": "Gong Meditation",
+      "category": "Events",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 12:00",
+          "stage": "Events",
+          "start": "12:00",
+          "end": "13:30"
+        }
+      ]
+    },
+    {
+      "name": "Hjerteland",
+      "category": "Events",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 12:00",
+          "stage": "Events",
+          "start": "12:00",
+          "end": "13:30"
+        },
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 10:00",
+          "stage": "Events",
+          "start": "10:00",
+          "end": "11:30"
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 10:00",
+          "stage": "Events",
+          "start": "10:00",
+          "end": "11:30"
+        }
+      ]
+    },
+    {
+      "name": "Intune",
+      "category": "Events",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026",
+          "stage": "Events",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026",
+          "stage": "Events",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026",
+          "stage": "Events",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    {
+      "name": "Linedance",
+      "category": "Events",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026",
+          "stage": "Events",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026",
+          "stage": "Ukendt",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026",
+          "stage": "Events",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    {
+      "name": "Mikkeller Løbeklub",
+      "category": "Events",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026",
+          "stage": "Events",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026",
+          "stage": "Events",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    {
+      "name": "Ramaton Morgendans",
+      "category": "Events",
+      "performances": [
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 09:00",
+          "stage": "Events",
+          "start": "09:00",
+          "end": "10:30"
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 09:00",
+          "stage": "Events",
+          "start": "09:00",
+          "end": "10:30"
+        }
+      ]
+    },
+    {
+      "name": "Ryslinge",
+      "category": "Events",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026",
+          "stage": "Events",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026",
+          "stage": "Events",
+          "start": null,
+          "end": null
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026",
+          "stage": "Events",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    {
+      "name": "Start Heartland Med 1664",
+      "category": "Events",
+      "performances": [
+        {
+          "day": "18. juni",
+          "date": "Torsdag d. 18. juni 2026, 13:30",
+          "stage": "Events",
+          "start": "13:30",
+          "end": "15:00"
+        },
+        {
+          "day": "19. juni",
+          "date": "Fredag d. 19. juni 2026, 11:00",
+          "stage": "Events",
+          "start": "11:00",
+          "end": "12:30"
+        },
+        {
+          "day": "20. juni",
+          "date": "Lørdag d. 20. juni 2026, 11:00",
+          "stage": "Events",
+          "start": "11:00",
+          "end": "12:30"
+        }
+      ]
+    }
+  ],
+  "by_day": {
+    "18. juni": [
+      {
+        "name": "Sira Jovina",
+        "category": "Musik",
+        "stage": "Diorama",
+        "date": "Torsdag d. 18. juni 2026, 14:10",
+        "start": "14:10",
+        "end": "15:40"
+      },
+      {
+        "name": "Mathias Ranch",
+        "category": "Musik",
+        "stage": "Diorama",
+        "date": "Torsdag d. 18. juni 2026, 15:35",
+        "start": "15:35",
+        "end": "17:05"
+      },
+      {
+        "name": "Will",
+        "category": "Musik",
+        "stage": "Diorama",
+        "date": "Torsdag d. 18. juni 2026, 18:00",
+        "start": "18:00",
+        "end": "19:30"
+      },
+      {
+        "name": "Swm",
+        "category": "Kunst",
+        "stage": "Diorama",
+        "date": "Torsdag d. 18. juni 2026, 21:15",
+        "start": "21:15",
+        "end": "22:45"
+      },
+      {
+        "name": "Hjerteland",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Torsdag d. 18. juni 2026, 12:00",
+        "start": "12:00",
+        "end": "13:30"
+      },
+      {
+        "name": "Drømmescenen",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Torsdag d. 18. juni 2026, 12:30",
+        "start": "12:30",
+        "end": "14:00"
+      },
+      {
+        "name": "Start Heartland Med 1664",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Torsdag d. 18. juni 2026, 13:30",
+        "start": "13:30",
+        "end": "15:00"
+      },
+      {
+        "name": "Intune",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Torsdag d. 18. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Ryslinge",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Torsdag d. 18. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Sange Fra Hjertet",
+        "category": "Musik",
+        "stage": "Greenfield",
+        "date": "Torsdag d. 18. juni 2026, 16:35",
+        "start": "16:35",
+        "end": "18:05"
+      },
+      {
+        "name": "Gnags",
+        "category": "Musik",
+        "stage": "Greenfield",
+        "date": "Torsdag d. 18. juni 2026, 19:20",
+        "start": "19:20",
+        "end": "20:50"
+      },
+      {
+        "name": "Nick Cave & The Bad Seeds",
+        "category": "Musik",
+        "stage": "Greenfield",
+        "date": "Torsdag d. 18. juni 2026, 22:00",
+        "start": "22:00",
+        "end": "23:30"
+      },
+      {
+        "name": "Katinka",
+        "category": "Musik",
+        "stage": "Highland",
+        "date": "Torsdag d. 18. juni 2026, 15:30",
+        "start": "15:30",
+        "end": "17:00"
+      },
+      {
+        "name": "Jason Isbell & The 400 Unit",
+        "category": "Musik",
+        "stage": "Highland",
+        "date": "Torsdag d. 18. juni 2026, 18:05",
+        "start": "18:05",
+        "end": "19:35"
+      },
+      {
+        "name": "Don West",
+        "category": "Musik",
+        "stage": "Highland",
+        "date": "Torsdag d. 18. juni 2026, 20:50",
+        "start": "20:50",
+        "end": "22:20"
+      },
+      {
+        "name": "Line Sandvad Mengers",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Torsdag d. 18. juni 2026, 12:05",
+        "start": "12:05",
+        "end": "13:35"
+      },
+      {
+        "name": "Kunstomvisning",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Torsdag d. 18. juni 2026, 13:00",
+        "start": "13:00",
+        "end": "14:30"
+      },
+      {
+        "name": "Paola Pivi",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Torsdag d. 18. juni 2026, 14:30",
+        "start": "14:30",
+        "end": "16:00"
+      },
+      {
+        "name": "Dicki Lakha",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Torsdag d. 18. juni 2026, 15:35",
+        "start": "15:35",
+        "end": "17:05"
+      },
+      {
+        "name": "Fos",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Torsdag d. 18. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Pinaffo & Pluvinage",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Torsdag d. 18. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Tableau",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Torsdag d. 18. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Anna Juul & Christian Groes",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Torsdag d. 18. juni 2026, 13:00",
+        "start": "13:00",
+        "end": "14:30"
+      },
+      {
+        "name": "Henrik Moltke & Marcel Mirzaei-Fard",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Torsdag d. 18. juni 2026, 14:10",
+        "start": "14:10",
+        "end": "15:40"
+      },
+      {
+        "name": "Helle Faber & Morten Kirckhoff",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Torsdag d. 18. juni 2026, 15:20",
+        "start": "15:20",
+        "end": "16:50"
+      },
+      {
+        "name": "Naja Marie Aidt & Søren Huss",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Torsdag d. 18. juni 2026, 17:55",
+        "start": "17:55",
+        "end": "19:25"
+      },
+      {
+        "name": "Henrik Vibskov & Mikkel Hess",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Torsdag d. 18. juni 2026, 21:00",
+        "start": "21:00",
+        "end": "22:30"
+      },
+      {
+        "name": "Søren Ejlersen",
+        "category": "Mad",
+        "stage": "Tasteland",
+        "date": "Torsdag d. 18. juni 2026, 13:30",
+        "start": "13:30",
+        "end": "15:00"
+      },
+      {
+        "name": "Agnes Karrasch & Nino Fjordside",
+        "category": "Mad",
+        "stage": "Tasteland",
+        "date": "Torsdag d. 18. juni 2026, 15:00",
+        "start": "15:00",
+        "end": "16:30"
+      },
+      {
+        "name": "Mika Wulff & Signe Wulff",
+        "category": "Mad",
+        "stage": "Tasteland",
+        "date": "Torsdag d. 18. juni 2026, 16:30",
+        "start": "16:30",
+        "end": "18:00"
+      },
+      {
+        "name": "Bjarke Bertelsen & Henrik Hemmingsen",
+        "category": "Mad",
+        "stage": "Tasteland",
+        "date": "Torsdag d. 18. juni 2026, 18:00",
+        "start": "18:00",
+        "end": "19:30"
+      }
+    ],
+    "19. juni": [
+      {
+        "name": "Kasper Bjørke & Prom Night",
+        "category": "Musik",
+        "stage": "Diorama",
+        "date": "Fredag d. 19. juni 2026, 00:00",
+        "start": "00:00",
+        "end": "01:30"
+      },
+      {
+        "name": "Total Hip Replacement",
+        "category": "Musik",
+        "stage": "Diorama",
+        "date": "Fredag d. 19. juni 2026, 12:30",
+        "start": "12:30",
+        "end": "14:00"
+      },
+      {
+        "name": "Atusji",
+        "category": "Musik",
+        "stage": "Diorama",
+        "date": "Fredag d. 19. juni 2026, 16:00",
+        "start": "16:00",
+        "end": "17:30"
+      },
+      {
+        "name": "Jonathan",
+        "category": "Musik",
+        "stage": "Diorama",
+        "date": "Fredag d. 19. juni 2026, 18:00",
+        "start": "18:00",
+        "end": "19:30"
+      },
+      {
+        "name": "Eros For You",
+        "category": "Musik",
+        "stage": "Diorama",
+        "date": "Fredag d. 19. juni 2026, 21:20",
+        "start": "21:20",
+        "end": "22:50"
+      },
+      {
+        "name": "Ramaton Morgendans",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Fredag d. 19. juni 2026, 09:00",
+        "start": "09:00",
+        "end": "10:30"
+      },
+      {
+        "name": "Hjerteland",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Fredag d. 19. juni 2026, 10:00",
+        "start": "10:00",
+        "end": "11:30"
+      },
+      {
+        "name": "Start Heartland Med 1664",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Fredag d. 19. juni 2026, 11:00",
+        "start": "11:00",
+        "end": "12:30"
+      },
+      {
+        "name": "Drømmescenen",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Fredag d. 19. juni 2026, 11:20",
+        "start": "11:20",
+        "end": "12:50"
+      },
+      {
+        "name": "Gong Meditation",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Fredag d. 19. juni 2026, 12:00",
+        "start": "12:00",
+        "end": "13:30"
+      },
+      {
+        "name": "Aperol Sprirtz Masterclass",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Fredag d. 19. juni 2026, 12:30",
+        "start": "12:30",
+        "end": "14:00"
+      },
+      {
+        "name": "Breathwork Session Med Sef",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Fredag d. 19. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Intune",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Fredag d. 19. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Linedance",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Fredag d. 19. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Mikkeller Løbeklub",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Fredag d. 19. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Ryslinge",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Fredag d. 19. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Pil",
+        "category": "Musik",
+        "stage": "Greenfield",
+        "date": "Fredag d. 19. juni 2026, 14:30",
+        "start": "14:30",
+        "end": "16:00"
+      },
+      {
+        "name": "4 Non Blondes",
+        "category": "Musik",
+        "stage": "Greenfield",
+        "date": "Fredag d. 19. juni 2026, 16:45",
+        "start": "16:45",
+        "end": "18:15"
+      },
+      {
+        "name": "Hugorm",
+        "category": "Musik",
+        "stage": "Greenfield",
+        "date": "Fredag d. 19. juni 2026, 19:30",
+        "start": "19:30",
+        "end": "21:00"
+      },
+      {
+        "name": "Duran Duran",
+        "category": "Musik",
+        "stage": "Greenfield",
+        "date": "Fredag d. 19. juni 2026, 22:15",
+        "start": "22:15",
+        "end": "23:45"
+      },
+      {
+        "name": "Roya",
+        "category": "Musik",
+        "stage": "Highland",
+        "date": "Fredag d. 19. juni 2026, 00:10",
+        "start": "00:10",
+        "end": "01:40"
+      },
+      {
+        "name": "Von Quar",
+        "category": "Musik",
+        "stage": "Highland",
+        "date": "Fredag d. 19. juni 2026, 13:20",
+        "start": "13:20",
+        "end": "14:50"
+      },
+      {
+        "name": "Snail Mail",
+        "category": "Musik",
+        "stage": "Highland",
+        "date": "Fredag d. 19. juni 2026, 15:40",
+        "start": "15:40",
+        "end": "17:10"
+      },
+      {
+        "name": "Max Mcnown",
+        "category": "Musik",
+        "stage": "Highland",
+        "date": "Fredag d. 19. juni 2026, 18:15",
+        "start": "18:15",
+        "end": "19:45"
+      },
+      {
+        "name": "Manic Street Preachers",
+        "category": "Musik",
+        "stage": "Highland",
+        "date": "Fredag d. 19. juni 2026, 21:00",
+        "start": "21:00",
+        "end": "22:30"
+      },
+      {
+        "name": "Spleen United",
+        "category": "Musik",
+        "stage": "Highland",
+        "date": "Fredag d. 19. juni 2026, 23:55",
+        "start": "23:55",
+        "end": "01:25"
+      },
+      {
+        "name": "Line Sandvad Mengers",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Fredag d. 19. juni 2026, 10:05",
+        "start": "10:05",
+        "end": "11:35"
+      },
+      {
+        "name": "Anna Walther",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Fredag d. 19. juni 2026, 10:30",
+        "start": "10:30",
+        "end": "12:00"
+      },
+      {
+        "name": "Kunstomvisning",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Fredag d. 19. juni 2026, 11:00",
+        "start": "11:00",
+        "end": "12:30"
+      },
+      {
+        "name": "Paola Pivi",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Fredag d. 19. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Fos",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Fredag d. 19. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Pinaffo & Pluvinage",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Fredag d. 19. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Dicki Lakha",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Fredag d. 19. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Tableau",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Fredag d. 19. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Eva Marie Rødbro & Simona Vencka Tayanna",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Fredag d. 19. juni 2026, 11:20",
+        "start": "11:20",
+        "end": "12:50"
+      },
+      {
+        "name": "Sara Stridsberg & Emma Holten",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Fredag d. 19. juni 2026, 12:30",
+        "start": "12:30",
+        "end": "14:00"
+      },
+      {
+        "name": "Paprika Steen & Lars Brygmann",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Fredag d. 19. juni 2026, 13:40",
+        "start": "13:40",
+        "end": "15:10"
+      },
+      {
+        "name": "Lærke Kløvedal & Matilde Kimer",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Fredag d. 19. juni 2026, 15:30",
+        "start": "15:30",
+        "end": "17:00"
+      },
+      {
+        "name": "Miranda July",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Fredag d. 19. juni 2026, 18:05",
+        "start": "18:05",
+        "end": "19:35"
+      },
+      {
+        "name": "Miriam Kongstad",
+        "category": "Kunst",
+        "stage": "Podium",
+        "date": "Fredag d. 19. juni 2026, 21:00",
+        "start": "21:00",
+        "end": "22:30"
+      },
+      {
+        "name": "Peter Mejnertsen",
+        "category": "Mad",
+        "stage": "Tasteland",
+        "date": "Fredag d. 19. juni 2026, 10:45",
+        "start": "10:45",
+        "end": "12:15"
+      },
+      {
+        "name": "Marie Holm & Lærke Kløvedal",
+        "category": "Mad",
+        "stage": "Tasteland",
+        "date": "Fredag d. 19. juni 2026, 12:15",
+        "start": "12:15",
+        "end": "13:45"
+      },
+      {
+        "name": "Clara Filippa & Rasmus Bredahl",
+        "category": "Mad",
+        "stage": "Tasteland",
+        "date": "Fredag d. 19. juni 2026, 13:45",
+        "start": "13:45",
+        "end": "15:15"
+      },
+      {
+        "name": "Ishinoko",
+        "category": "Mad",
+        "stage": "Tasteland",
+        "date": "Fredag d. 19. juni 2026, 15:15",
+        "start": "15:15",
+        "end": "16:45"
+      },
+      {
+        "name": "Jacob Stokkebye & Erik Lund",
+        "category": "Mad",
+        "stage": "Tasteland",
+        "date": "Fredag d. 19. juni 2026, 16:45",
+        "start": "16:45",
+        "end": "18:15"
+      },
+      {
+        "name": "Linedance",
+        "category": "Events",
+        "stage": "Ukendt",
+        "date": "Fredag d. 19. juni 2026",
+        "start": null,
+        "end": null
+      }
+    ],
+    "20. juni": [
+      {
+        "name": "Godaften – En Fest Med Anton Westerlin",
+        "category": "Musik",
+        "stage": "Diorama",
+        "date": "Lørdag d. 20. juni 2026, 00:00",
+        "start": "00:00",
+        "end": "01:30"
+      },
+      {
+        "name": "Snuggle",
+        "category": "Musik",
+        "stage": "Diorama",
+        "date": "Lørdag d. 20. juni 2026, 12:30",
+        "start": "12:30",
+        "end": "14:00"
+      },
+      {
+        "name": "Salon Bleu (Jazz Club)",
+        "category": "Musik",
+        "stage": "Diorama",
+        "date": "Lørdag d. 20. juni 2026, 15:45",
+        "start": "15:45",
+        "end": "17:15"
+      },
+      {
+        "name": "Augusta Schackinger",
+        "category": "Musik",
+        "stage": "Diorama",
+        "date": "Lørdag d. 20. juni 2026, 18:00",
+        "start": "18:00",
+        "end": "19:30"
+      },
+      {
+        "name": "Rosa",
+        "category": "Musik",
+        "stage": "Diorama",
+        "date": "Lørdag d. 20. juni 2026, 21:15",
+        "start": "21:15",
+        "end": "22:45"
+      },
+      {
+        "name": "Ramaton Morgendans",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Lørdag d. 20. juni 2026, 09:00",
+        "start": "09:00",
+        "end": "10:30"
+      },
+      {
+        "name": "Hjerteland",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Lørdag d. 20. juni 2026, 10:00",
+        "start": "10:00",
+        "end": "11:30"
+      },
+      {
+        "name": "Start Heartland Med 1664",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Lørdag d. 20. juni 2026, 11:00",
+        "start": "11:00",
+        "end": "12:30"
+      },
+      {
+        "name": "Drømmescenen",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Lørdag d. 20. juni 2026, 11:30",
+        "start": "11:30",
+        "end": "13:00"
+      },
+      {
+        "name": "Aperol Sprirtz Masterclass",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Lørdag d. 20. juni 2026, 12:30",
+        "start": "12:30",
+        "end": "14:00"
+      },
+      {
+        "name": "Aperol Sprirtz Masterclass",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Lørdag d. 20. juni 2026, 14:00",
+        "start": "14:00",
+        "end": "15:30"
+      },
+      {
+        "name": "Breathwork Session Med Sef",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Lørdag d. 20. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Intune",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Lørdag d. 20. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Linedance",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Lørdag d. 20. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Mikkeller Løbeklub",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Lørdag d. 20. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Ryslinge",
+        "category": "Events",
+        "stage": "Events",
+        "date": "Lørdag d. 20. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Guldimund",
+        "category": "Musik",
+        "stage": "Greenfield",
+        "date": "Lørdag d. 20. juni 2026, 14:30",
+        "start": "14:30",
+        "end": "16:00"
+      },
+      {
+        "name": "Lp",
+        "category": "Musik",
+        "stage": "Greenfield",
+        "date": "Lørdag d. 20. juni 2026, 16:45",
+        "start": "16:45",
+        "end": "18:15"
+      },
+      {
+        "name": "Hans Philip",
+        "category": "Musik",
+        "stage": "Greenfield",
+        "date": "Lørdag d. 20. juni 2026, 19:30",
+        "start": "19:30",
+        "end": "21:00"
+      },
+      {
+        "name": "The Minds Of 99",
+        "category": "Musik",
+        "stage": "Greenfield",
+        "date": "Lørdag d. 20. juni 2026, 22:15",
+        "start": "22:15",
+        "end": "23:45"
+      },
+      {
+        "name": "Soleima",
+        "category": "Musik",
+        "stage": "Highland",
+        "date": "Lørdag d. 20. juni 2026, 13:20",
+        "start": "13:20",
+        "end": "14:50"
+      },
+      {
+        "name": "Mille",
+        "category": "Musik",
+        "stage": "Highland",
+        "date": "Lørdag d. 20. juni 2026, 15:40",
+        "start": "15:40",
+        "end": "17:10"
+      },
+      {
+        "name": "Sébastien Tellier",
+        "category": "Musik",
+        "stage": "Highland",
+        "date": "Lørdag d. 20. juni 2026, 18:15",
+        "start": "18:15",
+        "end": "19:45"
+      },
+      {
+        "name": "Malk De Koijn",
+        "category": "Musik",
+        "stage": "Highland",
+        "date": "Lørdag d. 20. juni 2026, 21:10",
+        "start": "21:10",
+        "end": "22:40"
+      },
+      {
+        "name": "Icekiid",
+        "category": "Musik",
+        "stage": "Highland",
+        "date": "Lørdag d. 20. juni 2026, 23:55",
+        "start": "23:55",
+        "end": "01:25"
+      },
+      {
+        "name": "Line Sandvad Mengers",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Lørdag d. 20. juni 2026, 10:05",
+        "start": "10:05",
+        "end": "11:35"
+      },
+      {
+        "name": "Anna Walther",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Lørdag d. 20. juni 2026, 10:30",
+        "start": "10:30",
+        "end": "12:00"
+      },
+      {
+        "name": "Kunstomvisning",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Lørdag d. 20. juni 2026, 11:00",
+        "start": "11:00",
+        "end": "12:30"
+      },
+      {
+        "name": "Paola Pivi",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Lørdag d. 20. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Fos",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Lørdag d. 20. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Pinaffo & Pluvinage",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Lørdag d. 20. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Dicki Lakha",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Lørdag d. 20. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Tableau",
+        "category": "Kunst",
+        "stage": "Kunst",
+        "date": "Lørdag d. 20. juni 2026",
+        "start": null,
+        "end": null
+      },
+      {
+        "name": "Katherine Diez, Morten Mortensen & Eva Lilja",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Lørdag d. 20. juni 2026, 11:25",
+        "start": "11:25",
+        "end": "12:55"
+      },
+      {
+        "name": "Ghita Nørby & Bertel Haarder",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Lørdag d. 20. juni 2026, 12:30",
+        "start": "12:30",
+        "end": "14:00"
+      },
+      {
+        "name": "Anders Lund Madsen & Casper Kirketerp-Møller",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Lørdag d. 20. juni 2026, 13:40",
+        "start": "13:40",
+        "end": "15:10"
+      },
+      {
+        "name": "Åsne Seierstad & Isabel Bramsen",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Lørdag d. 20. juni 2026, 15:30",
+        "start": "15:30",
+        "end": "17:00"
+      },
+      {
+        "name": "Tommy Ahlers & Sebastian Mernild",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Lørdag d. 20. juni 2026, 18:05",
+        "start": "18:05",
+        "end": "19:35"
+      },
+      {
+        "name": "Karen-Lise Mynster, Bodil Skovgaard Nielsen & Liv Helm",
+        "category": "Talks",
+        "stage": "Podium",
+        "date": "Lørdag d. 20. juni 2026, 21:00",
+        "start": "21:00",
+        "end": "22:30"
+      },
+      {
+        "name": "Økobo",
+        "category": "Mad",
+        "stage": "Tasteland",
+        "date": "Lørdag d. 20. juni 2026, 10:30",
+        "start": "10:30",
+        "end": "12:00"
+      },
+      {
+        "name": "Alex Pichardt & Jens Helt Jessen",
+        "category": "Mad",
+        "stage": "Tasteland",
+        "date": "Lørdag d. 20. juni 2026, 12:00",
+        "start": "12:00",
+        "end": "13:30"
+      },
+      {
+        "name": "Micro Greens",
+        "category": "Mad",
+        "stage": "Tasteland",
+        "date": "Lørdag d. 20. juni 2026, 15:00",
+        "start": "15:00",
+        "end": "16:30"
+      }
+    ]
+  }
+}

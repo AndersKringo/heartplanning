@@ -269,3 +269,153 @@ select {
 .person-none {
   color: #6b7280;
 }
+
+/* ===== Calendar View ===== */
+.cal-container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cal-header-row {
+  display: flex;
+  border-bottom: 2px solid #e5e7eb;
+  background: #fff;
+}
+
+.cal-gutter {
+  width: 54px;
+  flex-shrink: 0;
+}
+
+.cal-day-header {
+  flex: 1;
+  padding: 10px 12px;
+  font-weight: 700;
+  text-align: center;
+  background: #eff6ff;
+  border-left: 1px solid #e5e7eb;
+  color: #1f2937;
+}
+
+.cal-body-wrap {
+  display: flex;
+  overflow-y: auto;
+  max-height: 72vh;
+}
+
+.cal-time-gutter {
+  position: relative;
+  border-right: 1px solid #e5e7eb;
+}
+
+.cal-hour-label {
+  position: absolute;
+  right: 6px;
+  font-size: 0.7rem;
+  color: #9ca3af;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.cal-day-col {
+  flex: 1;
+  position: relative;
+  border-left: 1px solid #e5e7eb;
+  min-width: 180px;
+}
+
+.cal-hour-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #f3f4f6;
+  pointer-events: none;
+}
+
+.cal-slot-block {
+  position: absolute;
+  border-radius: 6px;
+  padding: 5px 7px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.cal-slot-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cal-slot-people {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.cal-person-chip {
+  display: inline-block;
+  padding: 1px 5px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 0.68rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cal-person-chip.locked {
+  outline: 1px solid currentColor;
+}
+
+.cal-slot-empty {
+  font-size: 0.7rem;
+  opacity: 0.55;
+  font-style: italic;
+}
+
+.cal-prog-section {
+  position: absolute;
+  top: 0;
+  border-left: 1px dashed #d1d5db;
+}
+
+.cal-prog-block {
+  position: absolute;
+  border-radius: 4px;
+  padding: 2px 4px;
+  overflow: hidden;
+  font-size: 0.65rem;
+}
+
+.cal-prog-name {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cal-prog-stage {
+  opacity: 0.7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#btn-toggle-program {
+  display: none;
+  margin-left: auto;
+  margin-top: 0;
+  align-self: center;
+  padding: 5px 12px;
+  font-size: 0.82rem;
+  background: #059669;
+  border-radius: 8px;
+}
+
+#btn-toggle-program:hover {
+  background: #047857;
+}

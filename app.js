@@ -10,6 +10,8 @@ const elements = {
   btnAutoAllocate: null,
   btnPeopleView: null,
   btnScheduleView: null,
+  btnCalendarView: null,
+  btnToggleProgram: null,
   btnSaveSchedule: null,
   alert: null,
 };
@@ -19,6 +21,31 @@ const state = {
   people: [],
   schedule: [],
   view: 'schedule',
+  showProgram: false,
+  programData: null,
+};
+
+const CAL_START_H = 9;
+const CAL_START_MINS = CAL_START_H * 60;
+const CAL_END_H = 29; // 05:00 next day
+const PX_PER_MIN = 1.5;
+const CAL_TOTAL_PX = (CAL_END_H - CAL_START_H) * 60 * PX_PER_MIN;
+
+const SLOT_COLORS = {
+  morning:   { bg: '#fef3c7', border: '#f59e0b', text: '#92400e' },
+  afternoon: { bg: '#ffedd5', border: '#f97316', text: '#7c2d12' },
+  evening:   { bg: '#ede9fe', border: '#7c3aed', text: '#4c1d95' },
+  night:     { bg: '#dbeafe', border: '#2563eb', text: '#1e3a8a' },
+};
+
+const STAGE_COLORS = {
+  Greenfield: { bg: '#dcfce7', border: '#22c55e', text: '#14532d' },
+  Highland:   { bg: '#cffafe', border: '#06b6d4', text: '#164e63' },
+  Diorama:    { bg: '#fce7f3', border: '#ec4899', text: '#831843' },
+  Podium:     { bg: '#fef9c3', border: '#eab308', text: '#713f12' },
+  Tasteland:  { bg: '#ffedd5', border: '#f97316', text: '#7c2d12' },
+  Kunst:      { bg: '#f3e8ff', border: '#a855f7', text: '#581c87' },
+  Events:     { bg: '#f1f5f9', border: '#94a3b8', text: '#334155' },
 };
 
 
@@ -30,6 +57,8 @@ function initElements() {
   elements.btnAutoAllocate = document.getElementById('btn-auto-allocate');
   elements.btnPeopleView = document.getElementById('btn-people-view');
   elements.btnScheduleView = document.getElementById('btn-schedule-view');
+  elements.btnCalendarView = document.getElementById('btn-tab-calendar');
+  elements.btnToggleProgram = document.getElementById('btn-toggle-program');
   elements.btnSaveSchedule = document.getElementById('btn-save-schedule');
   elements.alert = document.getElementById('alert');
 }
@@ -463,6 +492,7 @@ function toggleLock(dayName, slotName, personId) {
   assignment.locked = !assignment.locked;
   saveScheduleToStorage();
   if (state.view === 'people') renderPeopleView();
+  else if (state.view === 'calendar') renderCalendarView();
   else renderSchedule();
 }
 
@@ -578,21 +608,226 @@ function getBundledConfig() {
   };
 }
 
+function toAdjMins(hhmm) {
+  if (!hhmm) return null;
+  const [h, m] = hhmm.split(':').map(Number);
+  let mins = h * 60 + m;
+  if (mins < CAL_START_MINS) mins += 24 * 60;
+  return mins;
+}
+
+function slotCategory(slotName, startTime) {
+  const n = (slotName || '').toLowerCase();
+  if (n.includes('formiddag')) return 'morning';
+  if (n.includes('eftermiddag')) return 'afternoon';
+  if (n.includes('aften')) return 'evening';
+  if (n.includes('nat')) return 'night';
+  if (startTime) {
+    const h = parseInt(startTime.split(':')[0], 10);
+    if (h >= 6 && h < 12) return 'morning';
+    if (h >= 12 && h < 17) return 'afternoon';
+    if (h >= 17 && h < 22) return 'evening';
+    return 'night';
+  }
+  return 'morning';
+}
+
+function formatPersonShort(person) {
+  const parts = person.name.trim().split(/\s+/);
+  if (parts.length === 1) return parts[0];
+  return parts[0] + ' ' + parts[parts.length - 1][0] + '.';
+}
+
+function computeSlotLayout(slots) {
+  const sorted = slots.slice().sort((a, b) => a.startMins - b.startMins);
+  const colEnds = [];
+  const result = [];
+  for (const slot of sorted) {
+    let col = -1;
+    for (let i = 0; i < colEnds.length; i++) {
+      if (slot.startMins >= colEnds[i]) { col = i; break; }
+    }
+    if (col === -1) { col = colEnds.length; colEnds.push(0); }
+    colEnds[col] = slot.endMins;
+    result.push({ ...slot, col });
+  }
+  return result.map(slot => {
+    const concurrent = result.filter(o => o.startMins < slot.endMins && o.endMins > slot.startMins);
+    const numCols = Math.max(...concurrent.map(s => s.col)) + 1;
+    return { ...slot, numCols };
+  });
+}
+
+function renderCalendarView() {
+  const DAY_KEY = { Torsdag: '18. juni', Fredag: '19. juni', Lørdag: '20. juni' };
+
+  const container = document.createElement('div');
+  container.className = 'cal-container';
+
+  // Sticky header
+  const headerRow = document.createElement('div');
+  headerRow.className = 'cal-header-row';
+  headerRow.appendChild(Object.assign(document.createElement('div'), { className: 'cal-gutter' }));
+  for (const day of state.config.days) {
+    const dh = document.createElement('div');
+    dh.className = 'cal-day-header';
+    dh.textContent = day.name;
+    headerRow.appendChild(dh);
+  }
+  container.appendChild(headerRow);
+
+  // Scrollable body
+  const bodyWrap = document.createElement('div');
+  bodyWrap.className = 'cal-body-wrap';
+
+  // Time gutter
+  const gutter = document.createElement('div');
+  gutter.className = 'cal-gutter cal-time-gutter';
+  gutter.style.height = CAL_TOTAL_PX + 'px';
+  for (let h = CAL_START_H; h <= CAL_END_H; h++) {
+    const lbl = document.createElement('div');
+    lbl.className = 'cal-hour-label';
+    lbl.style.top = ((h - CAL_START_H) * 60 * PX_PER_MIN) + 'px';
+    lbl.textContent = String(h % 24).padStart(2, '0') + ':00';
+    gutter.appendChild(lbl);
+  }
+  bodyWrap.appendChild(gutter);
+
+  // Day columns
+  for (const day of state.config.days) {
+    const dayCol = document.createElement('div');
+    dayCol.className = 'cal-day-col';
+    dayCol.style.height = CAL_TOTAL_PX + 'px';
+
+    for (let h = CAL_START_H; h <= CAL_END_H; h++) {
+      const line = document.createElement('div');
+      line.className = 'cal-hour-line';
+      line.style.top = ((h - CAL_START_H) * 60 * PX_PER_MIN) + 'px';
+      dayCol.appendChild(line);
+    }
+
+    const barSlotsData = day.timeslots
+      .map(slot => ({
+        name: slot.name,
+        startMins: toAdjMins(slot.start),
+        endMins: toAdjMins(slot.end),
+        required: slot.required,
+        schedSlot: getSlot(day.name, slot.name),
+        category: slotCategory(slot.name, slot.start),
+      }))
+      .filter(s => s.startMins !== null && s.endMins !== null);
+
+    const layoutSlots = computeSlotLayout(barSlotsData);
+    const barPct = (state.showProgram && state.programData) ? 52 : 100;
+
+    for (const slot of layoutSlots) {
+      const colors = SLOT_COLORS[slot.category];
+      const y = (slot.startMins - CAL_START_MINS) * PX_PER_MIN;
+      const slotH = (slot.endMins - slot.startMins) * PX_PER_MIN;
+      const colW = barPct / slot.numCols;
+      const colL = slot.col * colW;
+
+      const block = document.createElement('div');
+      block.className = 'cal-slot-block';
+      block.style.cssText = `top:${y}px;height:${slotH}px;left:${colL}%;width:calc(${colW}% - 3px);background:${colors.bg};border-left:4px solid ${colors.border};color:${colors.text};`;
+
+      const title = document.createElement('div');
+      title.className = 'cal-slot-title';
+      title.textContent = slot.name;
+      block.appendChild(title);
+
+      const peopleDiv = document.createElement('div');
+      peopleDiv.className = 'cal-slot-people';
+      if (slot.schedSlot && slot.schedSlot.people.length > 0) {
+        for (const a of slot.schedSlot.people) {
+          const person = state.people.find(p => p.id === a.id);
+          if (!person) continue;
+          const chip = document.createElement('span');
+          chip.className = 'cal-person-chip' + (a.locked ? ' locked' : '');
+          chip.textContent = formatPersonShort(person);
+          peopleDiv.appendChild(chip);
+        }
+      } else {
+        const empty = document.createElement('span');
+        empty.className = 'cal-slot-empty';
+        empty.textContent = `0 / ${slot.required}`;
+        peopleDiv.appendChild(empty);
+      }
+      block.appendChild(peopleDiv);
+      dayCol.appendChild(block);
+    }
+
+    // Program events (right section)
+    if (state.showProgram && state.programData) {
+      const events = (state.programData.by_day[DAY_KEY[day.name]] || []).filter(e => e.start);
+
+      const progSection = document.createElement('div');
+      progSection.className = 'cal-prog-section';
+      progSection.style.left = barPct + '%';
+      progSection.style.width = (100 - barPct) + '%';
+      progSection.style.height = CAL_TOTAL_PX + 'px';
+
+      const progSlots = events.map(e => ({
+        ...e,
+        startMins: toAdjMins(e.start),
+        endMins: e.end ? toAdjMins(e.end) : toAdjMins(e.start) + 90,
+      })).filter(e => e.startMins !== null);
+
+      const progLayout = computeSlotLayout(progSlots);
+
+      for (const ev of progLayout) {
+        const y = (ev.startMins - CAL_START_MINS) * PX_PER_MIN;
+        const evH = Math.max((ev.endMins - ev.startMins) * PX_PER_MIN, 22);
+        const sc = STAGE_COLORS[ev.stage] || STAGE_COLORS.Events;
+        const colW = 100 / ev.numCols;
+        const colL = ev.col * colW;
+
+        const evBlock = document.createElement('div');
+        evBlock.className = 'cal-prog-block';
+        evBlock.style.cssText = `top:${y}px;height:${evH}px;left:${colL}%;width:calc(${colW}% - 2px);background:${sc.bg};border-left:3px solid ${sc.border};color:${sc.text};`;
+
+        const evName = document.createElement('div');
+        evName.className = 'cal-prog-name';
+        evName.textContent = ev.name;
+        evBlock.appendChild(evName);
+
+        const evStage = document.createElement('div');
+        evStage.className = 'cal-prog-stage';
+        evStage.textContent = ev.stage;
+        evBlock.appendChild(evStage);
+
+        progSection.appendChild(evBlock);
+      }
+      dayCol.appendChild(progSection);
+    }
+
+    bodyWrap.appendChild(dayCol);
+  }
+
+  container.appendChild(bodyWrap);
+  elements.scheduleGrid.innerHTML = '';
+  elements.scheduleGrid.appendChild(container);
+  elements.summary.innerHTML = '';
+}
+
 function toggleView(viewName) {
   state.view = viewName;
-  
-  // Update active tab
-  if (elements.btnScheduleView && elements.btnPeopleView) {
-    if (viewName === 'people') {
-      elements.btnScheduleView.classList.remove('active');
-      elements.btnPeopleView.classList.add('active');
-    } else {
-      elements.btnScheduleView.classList.add('active');
-      elements.btnPeopleView.classList.remove('active');
-    }
+
+  const tabMap = [
+    [elements.btnScheduleView, 'schedule'],
+    [elements.btnPeopleView, 'people'],
+    [elements.btnCalendarView, 'calendar'],
+  ];
+  for (const [btn, view] of tabMap) {
+    if (btn) btn.classList.toggle('active', view === viewName);
   }
-  
+
+  if (elements.btnToggleProgram) {
+    elements.btnToggleProgram.style.display = viewName === 'calendar' ? 'inline-flex' : 'none';
+  }
+
   if (viewName === 'people') renderPeopleView();
+  else if (viewName === 'calendar') renderCalendarView();
   else renderSchedule();
 }
 
@@ -654,6 +889,17 @@ function wireEvents() {
   elements.btnAutoAllocate.addEventListener('click', autoAllocate);
   if (elements.btnScheduleView) elements.btnScheduleView.addEventListener('click', () => toggleView('schedule'));
   if (elements.btnPeopleView) elements.btnPeopleView.addEventListener('click', () => toggleView('people'));
+  if (elements.btnCalendarView) elements.btnCalendarView.addEventListener('click', () => toggleView('calendar'));
+  if (elements.btnToggleProgram) {
+    elements.btnToggleProgram.addEventListener('click', async () => {
+      state.showProgram = !state.showProgram;
+      elements.btnToggleProgram.textContent = state.showProgram ? 'Hide program' : 'Show program';
+      if (state.showProgram && !state.programData) {
+        state.programData = await fetchJson('program.json');
+      }
+      renderCalendarView();
+    });
+  }
   elements.btnSaveSchedule.addEventListener('click', saveSchedule);
 }
 
