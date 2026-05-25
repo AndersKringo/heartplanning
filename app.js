@@ -247,10 +247,6 @@ function canAssign(personId, dayName, slotName, schedule = state.schedule) {
   const totalAssigned = schedule.reduce((s, sl) => s + (sl.people.some((p) => p.id === personId) ? 1 : 0), 0);
   if (totalAssigned >= 2) return false;
 
-  // per-day assignments limit (1)
-  const sameDayCount = schedule.reduce((s, sl) => s + ((sl.day === dayName && sl.people.some((p) => p.id === personId)) ? 1 : 0), 0);
-  if (sameDayCount >= 1) return false;
-
   // overlapping times on same day
   const candidateConfig = getSlotConfig(dayName, slotName);
   for (const sl of schedule) {
