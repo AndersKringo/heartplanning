@@ -89,13 +89,14 @@ button:disabled {
   overflow-x: auto;
 }
 .schedule-calendar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 18px;
 }
-.day-column {
+.schedule-row {
   display: grid;
-  gap: 16px;
+  gap: 18px;
+  align-items: stretch;
 }
 .day-header {
   padding: 12px 14px;
@@ -115,6 +116,7 @@ button:disabled {
 .slot-meta {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 12px;
   flex-wrap: wrap;
   color: #374151;
@@ -243,8 +245,8 @@ select {
   border: 1px solid #e5e7eb;
 }
 @media (max-width: 720px) {
-  .schedule-calendar {
-    grid-template-columns: 1fr;
+  .schedule-row {
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -405,17 +407,39 @@ select {
   text-overflow: ellipsis;
 }
 
-#btn-toggle-program {
+.program-filters {
   display: none;
-  margin-left: auto;
-  margin-top: 0;
-  align-self: center;
-  padding: 5px 12px;
-  font-size: 0.82rem;
-  background: #059669;
-  border-radius: 8px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0 4px;
+  flex-wrap: wrap;
 }
 
-#btn-toggle-program:hover {
-  background: #047857;
+.filter-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-right: 2px;
+}
+
+.cat-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  margin: 0;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #e5e7eb;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cat-filter-btn:hover {
+  background: #d1d5db;
+}
+
+.cat-filter-btn.active {
+  color: #ffffff;
 }

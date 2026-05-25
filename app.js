@@ -11,7 +11,7 @@ const elements = {
   btnPeopleView: null,
   btnScheduleView: null,
   btnCalendarView: null,
-  btnToggleProgram: null,
+  programFilters: null,
   btnSaveSchedule: null,
   alert: null,
 };
@@ -21,7 +21,7 @@ const state = {
   people: [],
   schedule: [],
   view: 'schedule',
-  showProgram: false,
+  activeCategories: new Set(),
   programData: null,
 };
 
@@ -32,20 +32,25 @@ const PX_PER_MIN = 1.5;
 const CAL_TOTAL_PX = (CAL_END_H - CAL_START_H) * 60 * PX_PER_MIN;
 
 const SLOT_COLORS = {
-  morning:   { bg: '#fef3c7', border: '#f59e0b', text: '#92400e' },
-  afternoon: { bg: '#ffedd5', border: '#f97316', text: '#7c2d12' },
-  evening:   { bg: '#ede9fe', border: '#7c3aed', text: '#4c1d95' },
-  night:     { bg: '#dbeafe', border: '#2563eb', text: '#1e3a8a' },
+  morning:   { bg: '#f9fafb', border: '#d1d5db', text: '#374151' },
+  afternoon: { bg: '#f3f4f6', border: '#9ca3af', text: '#1f2937' },
+  evening:   { bg: '#e5e7eb', border: '#6b7280', text: '#111827' },
+  night:     { bg: '#d1d5db', border: '#4b5563', text: '#030712' },
 };
 
-const STAGE_COLORS = {
-  Greenfield: { bg: '#dcfce7', border: '#22c55e', text: '#14532d' },
-  Highland:   { bg: '#cffafe', border: '#06b6d4', text: '#164e63' },
-  Diorama:    { bg: '#fce7f3', border: '#ec4899', text: '#831843' },
-  Podium:     { bg: '#fef9c3', border: '#eab308', text: '#713f12' },
-  Tasteland:  { bg: '#ffedd5', border: '#f97316', text: '#7c2d12' },
-  Kunst:      { bg: '#f3e8ff', border: '#a855f7', text: '#581c87' },
-  Events:     { bg: '#f1f5f9', border: '#94a3b8', text: '#334155' },
+const MUSIK_STAGE_COLORS = {
+  Greenfield: { bg: '#eff6ff', border: '#93c5fd', text: '#1e40af' },
+  Highland:   { bg: '#dbeafe', border: '#3b82f6', text: '#1e3a8a' },
+  Diorama:    { bg: '#bfdbfe', border: '#1d4ed8', text: '#1e3a8a' },
+};
+
+// Single source of truth: button color + event block styling per category
+const CATEGORIES = {
+  Musik:  { color: '#2563eb', bg: '#dbeafe', border: '#2563eb', text: '#1e3a8a' },
+  Talks:  { color: '#d97706', bg: '#fef3c7', border: '#d97706', text: '#78350f' },
+  Kunst:  { color: '#7c3aed', bg: '#ede9fe', border: '#7c3aed', text: '#4c1d95' },
+  Mad:    { color: '#dc2626', bg: '#fee2e2', border: '#dc2626', text: '#7f1d1d' },
+  Events: { color: '#475569', bg: '#f1f5f9', border: '#475569', text: '#1e293b' },
 };
 
 
@@ -58,7 +63,7 @@ function initElements() {
   elements.btnPeopleView = document.getElementById('btn-people-view');
   elements.btnScheduleView = document.getElementById('btn-schedule-view');
   elements.btnCalendarView = document.getElementById('btn-tab-calendar');
-  elements.btnToggleProgram = document.getElementById('btn-toggle-program');
+  elements.programFilters = document.getElementById('program-filters');
   elements.btnSaveSchedule = document.getElementById('btn-save-schedule');
   elements.alert = document.getElementById('alert');
 }
@@ -330,103 +335,116 @@ function autoAllocate() {
   renderSchedule();
 }
 
+function buildSlotCard(day, slot) {
+  const scheduleSlot = getSlot(day.name, slot.name);
+  const slotCard = document.createElement('div');
+  slotCard.className = 'slot-card';
+
+  const meta = document.createElement('div');
+  meta.className = 'slot-meta';
+  const title = document.createElement('div');
+  title.innerHTML = `<strong>${slot.name}</strong><div class="slot-time">${slot.start || ''}${slot.start && slot.end ? ' – ' + slot.end : ''}</div>`;
+  const count = document.createElement('div');
+  count.className = 'slot-required';
+  count.textContent = `${scheduleSlot.people.length}/${slot.required}`;
+  meta.appendChild(title);
+  meta.appendChild(count);
+  slotCard.appendChild(meta);
+
+  const peopleList = document.createElement('div');
+  peopleList.className = 'slot-people';
+  if (scheduleSlot.people.length === 0) {
+    const empty = document.createElement('div');
+    empty.textContent = 'No people assigned yet.';
+    peopleList.appendChild(empty);
+  } else {
+    for (const assignment of scheduleSlot.people) {
+      const person = state.people.find((item) => item.id === assignment.id) || { name: 'Unknown' };
+      const item = document.createElement('div');
+      item.className = 'assignment';
+
+      const name = document.createElement('span');
+      name.textContent = person.name;
+      item.appendChild(name);
+
+      const actions = document.createElement('div');
+      actions.className = 'assignment-actions';
+
+      const lockButton = document.createElement('button');
+      lockButton.type = 'button';
+      lockButton.className = 'lock-toggle';
+      lockButton.textContent = assignment.locked ? 'Unlock' : 'Lock';
+      lockButton.addEventListener('click', () => toggleLock(day.name, slot.name, assignment.id));
+      actions.appendChild(lockButton);
+
+      const removeButton = document.createElement('button');
+      removeButton.type = 'button';
+      removeButton.className = 'remove';
+      removeButton.textContent = 'Remove';
+      removeButton.addEventListener('click', () => removePerson(day.name, slot.name, assignment.id));
+      actions.appendChild(removeButton);
+
+      item.appendChild(actions);
+      peopleList.appendChild(item);
+    }
+  }
+  slotCard.appendChild(peopleList);
+
+  const select = document.createElement('select');
+  const emptyOption = document.createElement('option');
+  emptyOption.value = '';
+  emptyOption.textContent = 'Add person...';
+  select.appendChild(emptyOption);
+  for (const person of state.people) {
+    const alreadyAssigned = scheduleSlot.people.some((assignment) => assignment.id === person.id);
+    const option = document.createElement('option');
+    option.value = person.id;
+    option.textContent = person.name;
+    if (alreadyAssigned || !canAssign(person.id, day.name, slot.name)) {
+      option.disabled = true;
+    }
+    select.appendChild(option);
+  }
+  select.addEventListener('change', () => {
+    if (!select.value) return;
+    assignPerson(day.name, slot.name, select.value);
+    select.value = '';
+  });
+  slotCard.appendChild(select);
+
+  return slotCard;
+}
+
 function renderSchedule() {
+  const days = state.config.days;
+  const cols = `repeat(${days.length}, 1fr)`;
+  const maxSlots = Math.max(...days.map(d => d.timeslots.length));
+
   const calendar = document.createElement('div');
   calendar.className = 'schedule-calendar';
 
-  for (const day of state.config.days) {
-    const dayColumn = document.createElement('div');
-    dayColumn.className = 'day-column';
+  // Day header row
+  const headerRow = document.createElement('div');
+  headerRow.className = 'schedule-row';
+  headerRow.style.gridTemplateColumns = cols;
+  for (const day of days) {
+    const dh = document.createElement('div');
+    dh.className = 'day-header';
+    dh.textContent = day.name;
+    headerRow.appendChild(dh);
+  }
+  calendar.appendChild(headerRow);
 
-    const dayHeader = document.createElement('div');
-    dayHeader.className = 'day-header';
-    dayHeader.textContent = day.name;
-    dayColumn.appendChild(dayHeader);
-
-    for (const slot of day.timeslots) {
-      const scheduleSlot = getSlot(day.name, slot.name);
-      const slotCard = document.createElement('div');
-      slotCard.className = 'slot-card';
-
-      const meta = document.createElement('div');
-      meta.className = 'slot-meta';
-      const title = document.createElement('div');
-      title.innerHTML = `<strong>${slot.name}</strong><div class="slot-time">${slot.start || ''}${slot.start && slot.end ? ' – ' + slot.end : ''}</div>`;
-      const count = document.createElement('div');
-      count.className = 'slot-required';
-      count.textContent = `${scheduleSlot.people.length}/${slot.required}`;
-      meta.appendChild(title);
-      meta.appendChild(count);
-      slotCard.appendChild(meta);
-
-      const peopleList = document.createElement('div');
-      peopleList.className = 'slot-people';
-      if (scheduleSlot.people.length === 0) {
-        const empty = document.createElement('div');
-        empty.textContent = 'No people assigned yet.';
-        peopleList.appendChild(empty);
-      } else {
-        for (const assignment of scheduleSlot.people) {
-          const person = state.people.find((item) => item.id === assignment.id) || { name: 'Unknown' };
-          const item = document.createElement('div');
-          item.className = 'assignment';
-
-          const name = document.createElement('span');
-          name.textContent = person.name;
-          item.appendChild(name);
-
-          const actions = document.createElement('div');
-          actions.className = 'assignment-actions';
-
-          const lockButton = document.createElement('button');
-          lockButton.type = 'button';
-          lockButton.className = 'lock-toggle';
-          lockButton.textContent = assignment.locked ? 'Unlock' : 'Lock';
-          lockButton.addEventListener('click', () => toggleLock(day.name, slot.name, assignment.id));
-          actions.appendChild(lockButton);
-
-          const removeButton = document.createElement('button');
-          removeButton.type = 'button';
-          removeButton.className = 'remove';
-          removeButton.textContent = 'Remove';
-          removeButton.addEventListener('click', () => removePerson(day.name, slot.name, assignment.id));
-          actions.appendChild(removeButton);
-
-          item.appendChild(actions);
-          peopleList.appendChild(item);
-        }
-      }
-
-      slotCard.appendChild(peopleList);
-
-      const select = document.createElement('select');
-      const emptyOption = document.createElement('option');
-      emptyOption.value = '';
-      emptyOption.textContent = 'Add person...';
-      select.appendChild(emptyOption);
-
-      for (const person of state.people) {
-        const alreadyAssigned = scheduleSlot.people.some((assignment) => assignment.id === person.id);
-        const option = document.createElement('option');
-        option.value = person.id;
-        option.textContent = person.name;
-        if (alreadyAssigned || !canAssign(person.id, day.name, slot.name)) {
-          option.disabled = true;
-        }
-        select.appendChild(option);
-      }
-
-      select.addEventListener('change', () => {
-        if (!select.value) return;
-        assignPerson(day.name, slot.name, select.value);
-        select.value = '';
-      });
-      slotCard.appendChild(select);
-
-      dayColumn.appendChild(slotCard);
+  // One row per timeslot index so heights align across all days
+  for (let i = 0; i < maxSlots; i++) {
+    const slotRow = document.createElement('div');
+    slotRow.className = 'schedule-row';
+    slotRow.style.gridTemplateColumns = cols;
+    for (const day of days) {
+      const slot = day.timeslots[i];
+      slotRow.appendChild(slot ? buildSlotCard(day, slot) : document.createElement('div'));
     }
-
-    calendar.appendChild(dayColumn);
+    calendar.appendChild(slotRow);
   }
 
   elements.scheduleGrid.innerHTML = '';
@@ -658,6 +676,48 @@ function computeSlotLayout(slots) {
   });
 }
 
+async function updateProgramFilters() {
+  if (!elements.programFilters) return;
+  if (state.view !== 'calendar') {
+    elements.programFilters.style.display = 'none';
+    return;
+  }
+  if (!state.programData) {
+    state.programData = await fetchJson('program.json');
+  }
+  elements.programFilters.style.display = 'flex';
+  elements.programFilters.innerHTML = '';
+  if (!state.programData) return;
+
+  const label = document.createElement('span');
+  label.className = 'filter-label';
+  label.textContent = 'Program:';
+  elements.programFilters.appendChild(label);
+
+  const categories = [...new Set(state.programData.programme.map(a => a.category))];
+  for (const cat of categories) {
+    const color = (CATEGORIES[cat] || CATEGORIES.Events).color;
+    const isActive = state.activeCategories.has(cat);
+    const btn = document.createElement('button');
+    btn.className = 'cat-filter-btn' + (isActive ? ' active' : '');
+    btn.textContent = cat;
+    if (isActive) btn.style.background = color;
+    btn.addEventListener('click', () => {
+      if (state.activeCategories.has(cat)) {
+        state.activeCategories.delete(cat);
+        btn.classList.remove('active');
+        btn.style.background = '';
+      } else {
+        state.activeCategories.add(cat);
+        btn.classList.add('active');
+        btn.style.background = color;
+      }
+      renderCalendarView();
+    });
+    elements.programFilters.appendChild(btn);
+  }
+}
+
 function renderCalendarView() {
   const DAY_KEY = { Torsdag: '18. juni', Fredag: '19. juni', Lørdag: '20. juni' };
 
@@ -718,7 +778,7 @@ function renderCalendarView() {
       .filter(s => s.startMins !== null && s.endMins !== null);
 
     const layoutSlots = computeSlotLayout(barSlotsData);
-    const barPct = (state.showProgram && state.programData) ? 52 : 100;
+    const barPct = (state.activeCategories.size > 0 && state.programData) ? 52 : 100;
 
     for (const slot of layoutSlots) {
       const colors = SLOT_COLORS[slot.category];
@@ -758,8 +818,9 @@ function renderCalendarView() {
     }
 
     // Program events (right section)
-    if (state.showProgram && state.programData) {
-      const events = (state.programData.by_day[DAY_KEY[day.name]] || []).filter(e => e.start);
+    if (state.activeCategories.size > 0 && state.programData) {
+      const events = (state.programData.by_day[DAY_KEY[day.name]] || [])
+        .filter(e => e.start && state.activeCategories.has(e.category));
 
       const progSection = document.createElement('div');
       progSection.className = 'cal-prog-section';
@@ -778,7 +839,9 @@ function renderCalendarView() {
       for (const ev of progLayout) {
         const y = (ev.startMins - CAL_START_MINS) * PX_PER_MIN;
         const evH = Math.max((ev.endMins - ev.startMins) * PX_PER_MIN, 22);
-        const sc = STAGE_COLORS[ev.stage] || STAGE_COLORS.Events;
+        const sc = ev.category === 'Musik'
+          ? (MUSIK_STAGE_COLORS[ev.stage] || MUSIK_STAGE_COLORS.Diorama)
+          : (CATEGORIES[ev.category] || CATEGORIES.Events);
         const colW = 100 / ev.numCols;
         const colL = ev.col * colW;
 
@@ -822,9 +885,7 @@ function toggleView(viewName) {
     if (btn) btn.classList.toggle('active', view === viewName);
   }
 
-  if (elements.btnToggleProgram) {
-    elements.btnToggleProgram.style.display = viewName === 'calendar' ? 'inline-flex' : 'none';
-  }
+  updateProgramFilters();
 
   if (viewName === 'people') renderPeopleView();
   else if (viewName === 'calendar') renderCalendarView();
@@ -890,16 +951,6 @@ function wireEvents() {
   if (elements.btnScheduleView) elements.btnScheduleView.addEventListener('click', () => toggleView('schedule'));
   if (elements.btnPeopleView) elements.btnPeopleView.addEventListener('click', () => toggleView('people'));
   if (elements.btnCalendarView) elements.btnCalendarView.addEventListener('click', () => toggleView('calendar'));
-  if (elements.btnToggleProgram) {
-    elements.btnToggleProgram.addEventListener('click', async () => {
-      state.showProgram = !state.showProgram;
-      elements.btnToggleProgram.textContent = state.showProgram ? 'Hide program' : 'Show program';
-      if (state.showProgram && !state.programData) {
-        state.programData = await fetchJson('program.json');
-      }
-      renderCalendarView();
-    });
-  }
   elements.btnSaveSchedule.addEventListener('click', saveSchedule);
 }
 
