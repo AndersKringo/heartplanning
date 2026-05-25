@@ -13,8 +13,81 @@ main {
   padding: 24px;
 }
 header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 24px;
 }
+
+.admin-toggle-btn {
+  margin: 0;
+  padding: 8px 16px;
+  background: #e5e7eb;
+  color: #374151;
+  font-weight: 600;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+.admin-toggle-btn:hover {
+  background: #d1d5db;
+}
+.admin-toggle-btn.active {
+  background: #1f2937;
+  color: #ffffff;
+}
+
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.admin-modal-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.admin-modal-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+.admin-code-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 1.4rem;
+  letter-spacing: 0.3em;
+  text-align: center;
+}
+.admin-code-error {
+  color: #dc2626;
+  font-size: 0.85rem;
+  min-height: 18px;
+}
+.admin-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.admin-modal-actions button {
+  margin: 0;
+}
+
+body.readonly .controls { display: none; }
+body.readonly .compact-summary-panel { display: none; }
+body.readonly .lock-toggle { display: none; }
+body.readonly button.remove { display: none; }
+body.readonly .slot-card select { display: none; }
 h1 {
   margin: 0 0 8px;
   font-size: clamp(2rem, 2.5vw, 2.75rem);

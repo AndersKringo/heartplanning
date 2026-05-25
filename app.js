@@ -44,6 +44,8 @@ const MUSIK_STAGE_COLORS = {
   Diorama:    { bg: '#bfdbfe', border: '#1d4ed8', text: '#1e3a8a' },
 };
 
+const ADMIN_CODE = '180626'; // change this before sharing
+
 // Single source of truth: button color + event block styling per category
 const CATEGORIES = {
   Musik:  { color: '#2563eb', bg: '#dbeafe', border: '#2563eb', text: '#1e3a8a' },
@@ -931,6 +933,16 @@ function renderPeopleView() {
         });
         li.appendChild(btn);
 
+        const removeBtn = document.createElement('button');
+        removeBtn.className = 'remove';
+        removeBtn.style.marginLeft = '4px';
+        removeBtn.textContent = 'Remove';
+        removeBtn.addEventListener('click', (ev) => {
+          ev.stopPropagation();
+          removePerson(a.day, a.timeslot, person.id);
+        });
+        li.appendChild(removeBtn);
+
         list.appendChild(li);
       }
       card.appendChild(list);
@@ -944,6 +956,51 @@ function renderPeopleView() {
   elements.summary.innerHTML = '';
 }
 
+function isAdminMode() {
+  return sessionStorage.getItem('admin') === '1';
+}
+
+function applyMode() {
+  const admin = isAdminMode();
+  document.body.classList.toggle('readonly', !admin);
+  const btn = document.getElementById('btn-admin-toggle');
+  if (btn) {
+    btn.textContent = admin ? 'Exit admin' : 'Admin';
+    btn.classList.toggle('active', admin);
+  }
+}
+
+function showAdminModal() {
+  const modal = document.getElementById('admin-modal');
+  const input = document.getElementById('admin-code-input');
+  const err = document.getElementById('admin-code-error');
+  if (!modal) return;
+  if (err) err.textContent = '';
+  if (input) input.value = '';
+  modal.style.display = 'flex';
+  if (input) input.focus();
+}
+
+function hideAdminModal() {
+  const modal = document.getElementById('admin-modal');
+  if (modal) modal.style.display = 'none';
+}
+
+function attemptAdminLogin() {
+  const input = document.getElementById('admin-code-input');
+  const err = document.getElementById('admin-code-error');
+  if (!input) return;
+  if (input.value === ADMIN_CODE) {
+    sessionStorage.setItem('admin', '1');
+    hideAdminModal();
+    applyMode();
+  } else {
+    if (err) err.textContent = 'Incorrect code. Try again.';
+    input.value = '';
+    input.focus();
+  }
+}
+
 function wireEvents() {
   initElements();
   elements.btnClearSchedule.addEventListener('click', clearSchedule);
@@ -952,10 +1009,37 @@ function wireEvents() {
   if (elements.btnPeopleView) elements.btnPeopleView.addEventListener('click', () => toggleView('people'));
   if (elements.btnCalendarView) elements.btnCalendarView.addEventListener('click', () => toggleView('calendar'));
   elements.btnSaveSchedule.addEventListener('click', saveSchedule);
+
+  const btnAdminToggle = document.getElementById('btn-admin-toggle');
+  if (btnAdminToggle) {
+    btnAdminToggle.addEventListener('click', () => {
+      if (isAdminMode()) {
+        sessionStorage.removeItem('admin');
+        applyMode();
+      } else {
+        showAdminModal();
+      }
+    });
+  }
+
+  const btnAdminCancel = document.getElementById('btn-admin-cancel');
+  if (btnAdminCancel) btnAdminCancel.addEventListener('click', hideAdminModal);
+
+  const btnAdminConfirm = document.getElementById('btn-admin-confirm');
+  if (btnAdminConfirm) btnAdminConfirm.addEventListener('click', attemptAdminLogin);
+
+  const adminInput = document.getElementById('admin-code-input');
+  if (adminInput) {
+    adminInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') attemptAdminLogin();
+      if (e.key === 'Escape') hideAdminModal();
+    });
+  }
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
   wireEvents();
+  applyMode();
   await loadDefaults();
   toggleView(state.view);
 });
