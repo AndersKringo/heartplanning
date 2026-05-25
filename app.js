@@ -395,7 +395,7 @@ function buildSlotCard(day, slot) {
   emptyOption.value = '';
   emptyOption.textContent = 'Add person...';
   select.appendChild(emptyOption);
-  for (const person of state.people) {
+  for (const person of state.people.slice().sort((a, b) => a.name.localeCompare(b.name, 'da'))) {
     const alreadyAssigned = scheduleSlot.people.some((assignment) => assignment.id === person.id);
     const option = document.createElement('option');
     option.value = person.id;
@@ -924,7 +924,7 @@ function renderPeopleView() {
   const container = document.createElement('div');
   container.className = 'people-list';
 
-  for (const person of state.people) {
+  for (const person of state.people.slice().sort((a, b) => a.name.localeCompare(b.name, 'da'))) {
     const card = document.createElement('div');
     card.className = 'person-card';
 
