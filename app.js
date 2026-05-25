@@ -23,6 +23,7 @@ const state = {
   view: 'schedule',
   activeCategories: new Set(),
   programData: null,
+  remoteAvailable: false,
 };
 
 const CAL_START_H = 9;
@@ -116,6 +117,7 @@ function saveScheduleToStorage() {
 
 
 async function saveScheduleRemote(schedule) {
+  if (!state.remoteAvailable) return false;
   try {
     await fetch(API_SCHEDULE_URL, {
       method: 'POST',
@@ -545,6 +547,30 @@ function saveSchedule() {
   }
 }
 
+function importScheduleFromFile(file) {
+  const reader = new FileReader();
+  reader.onload = async (e) => {
+    try {
+      const parsed = JSON.parse(e.target.result);
+      const schedule = parsed.schedule || parsed;
+      if (!isStoredScheduleCompatible(schedule, state.config)) {
+        setAlert('Import failed: schedule does not match current timeslot configuration.');
+        return;
+      }
+      state.schedule = schedule;
+      state.remoteAvailable = true;
+      saveScheduleToStorage();
+      if (state.view === 'people') renderPeopleView();
+      else if (state.view === 'calendar') renderCalendarView();
+      else renderSchedule();
+      setAlert('Schedule imported successfully.', false);
+    } catch (err) {
+      setAlert('Import failed: invalid JSON file.');
+    }
+  };
+  reader.readAsText(file);
+}
+
 function validateConfig(config) {
   if (!config || !Array.isArray(config.days)) throw new Error('Config must be an object with a days array.');
   for (const day of config.days) {
@@ -576,15 +602,19 @@ async function loadDefaults() {
   const remote = await loadScheduleRemote();
   if (remote && isStoredScheduleCompatible(remote, state.config)) {
     state.schedule = remote;
+    state.remoteAvailable = true;
   } else {
     const stored = loadScheduleFromStorage();
     if (stored && isStoredScheduleCompatible(stored, state.config)) {
+      // Remote was unavailable — use local copy for display but don't push it back
       state.schedule = stored;
+      state.remoteAvailable = false;
     } else {
       if (remote || stored) {
         setAlert('Saved schedule data did not match the current timeslot configuration and has been reset.', true);
       }
       state.schedule = createEmptySchedule(state.config);
+      state.remoteAvailable = true;
     }
   }
   renderSchedule();
@@ -1005,6 +1035,18 @@ function wireEvents() {
   if (elements.btnPeopleView) elements.btnPeopleView.addEventListener('click', () => toggleView('people'));
   if (elements.btnCalendarView) elements.btnCalendarView.addEventListener('click', () => toggleView('calendar'));
   elements.btnSaveSchedule.addEventListener('click', saveSchedule);
+
+  const btnImport = document.getElementById('btn-import-schedule');
+  const fileInput = document.getElementById('input-import-file');
+  if (btnImport && fileInput) {
+    btnImport.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files[0]) {
+        importScheduleFromFile(fileInput.files[0]);
+        fileInput.value = '';
+      }
+    });
+  }
 
   const btnAdminToggle = document.getElementById('btn-admin-toggle');
   if (btnAdminToggle) {
